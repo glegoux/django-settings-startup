@@ -14,7 +14,7 @@ def read(fname):
 
 setup(
     name='django-settings-startup',
-    version=read('VERSION'),
+    version=read('VERSION').rstrip(),
     packages=['settings-startup'],
     include_package_data=True,
     license='MIT License',
