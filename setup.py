@@ -10,21 +10,26 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    with open(os.path.join(os.path.dirname(__file__), fname)) as fname:
+        return fname.read()
 
 setup(
     name='django-settings-startup',
+    keywords='django settings startup',
     version=read('VERSION').rstrip(),
     packages=['settings-startup'],
     include_package_data=True,
-    license='MIT License',
+    license=read('LICENSE'),
     description='A simple Django app to see settings on startup.',
     long_description=read('README.rst'),
     url='https://github.com/glegoux/django-settings-startup/',
     author='Gilles LEGOUX',
     author_email='gilles.legoux@gmail.com',
+    maintainer='Gilles LEGOUX',
+    maintainer_email='gilles.legoux@gmail.com',
     tests_require=['Django>=1.8.5'],
     test_suite='tests.test',
+    platforms='any',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
