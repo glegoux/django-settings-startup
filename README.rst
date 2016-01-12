@@ -17,7 +17,7 @@ Install
 
     INSTALLED_APPS = [
         ...
-        'settings-startup',
+        'settings_startup',
     ]
 
 Lastest Version
