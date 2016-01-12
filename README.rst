@@ -25,6 +25,11 @@ Lastest Version
 
 0.1
 
+Code Source
+-----------
+
+https://github.com/glegoux/django-settings-startup/
+
 PyPI
 ----
 
