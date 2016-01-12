@@ -1,3 +1,5 @@
+/install-files.txt
+/build/
 /dist/
 /*.egg-info/
 **/*.pyc

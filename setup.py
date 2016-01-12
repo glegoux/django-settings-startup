@@ -17,7 +17,7 @@ setup(
     name='django-settings-startup',
     keywords='django settings startup',
     version=read('VERSION').rstrip(),
-    packages=['settings-startup'],
+    packages=['settings_startup'],
     include_package_data=True,
     license=read('LICENSE'),
     description='A simple Django app to see settings on startup.',
