@@ -1,7 +1,8 @@
 Django Settings On Startup
 ==========================
 
-See your chosen settings in stdout when django is starting with ``python manage.py runserver``.  
+See your chosen settings in stdout when django is starting with ``python manage.py runserver``.
+
 For Django 1.8.5 and python 3.4.
 
 
