@@ -1,7 +1,7 @@
 Django Settings On Startup
 ==========================
 
-See your chosen settings in stdout when django is starting with ``python manage.py runserver``.
+See your chosen settings in stdout when django is starting with ``python manage.py runserver``.::
 For Django 1.8.5 and python 3.4.
 
 
@@ -10,14 +10,14 @@ Install
 
 1. Download package::
 
-    pip install django-print-settings
+    pip install django-settings-startup
 
 2. Add "settings-startup" to your INSTALLED_APPS setting like this::
 
-  INSTALLED_APPS = [
-    ...
-    'settings-startup',
-  ]
+INSTALLED_APPS = [
+...
+'settings-startup',
+]
 
 Lastest Version
 ---------------
