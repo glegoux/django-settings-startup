@@ -15,10 +15,10 @@ Install
 
 2. Add "settings-startup" to your INSTALLED_APPS setting like this::
 
-INSTALLED_APPS = [
-...
-'settings-startup',
-]
+    INSTALLED_APPS = [
+        ...
+        'settings-startup',
+    ]
 
 Lastest Version
 ---------------
