@@ -42,7 +42,7 @@ Latest Version
 
 1.0
 
-Code Source
+Source Code
 -----------
 
 https://github.com/glegoux/django-settings-startup/
