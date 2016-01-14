@@ -1,8 +1,8 @@
 Django Settings On Startup
 ==========================
 
-See your chosen settings on output when django is starting with ``runserver`` command,
-with the additional CLI option ``--config``.
+See your chosen settings on output when django is starting with ``runserver`` command,  
+an additional CLI option.
 
 
 For Django 1.8.5 and python 3.4.
