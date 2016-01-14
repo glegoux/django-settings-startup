@@ -37,7 +37,7 @@ Install
         'django_settings_startup',
     ]
 
-Lastest Version
+Latest Version
 ---------------
 
 1.0
