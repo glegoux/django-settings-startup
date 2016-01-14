@@ -1,10 +1,7 @@
 #!/usr/bin/env python3.4
 
 import os
-from setuptools import setup
-
-with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
-    README = readme.read()
+from setuptools import setup, find_packages
 
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
@@ -16,8 +13,8 @@ def read(fname):
 setup(
     name='django-settings-startup',
     keywords='django settings startup',
+    packages=find_packages(),
     version=read('VERSION').rstrip(),
-    packages=['settings_startup'],
     include_package_data=True,
     license=read('LICENSE'),
     description='A simple Django app to see settings on startup.',

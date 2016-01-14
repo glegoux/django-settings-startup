@@ -1,10 +1,27 @@
 Django Settings On Startup
 ==========================
 
-See your chosen settings in stdout when django is starting with ``python manage.py runserver``.
+See your chosen settings on output when django is starting with ``runserver`` command,
+with the additional CLI option ``--config``.
+
 
 For Django 1.8.5 and python 3.4.
 
+Usage
+-----
+
+Once installed, using this command::
+
+    python manage.py runserver --config
+
+
+Additional CLI Options
+~~~~~~~~~~~~~~~~~~~~~~
+
+--config
+  Show your settings on output.
+
+Please see ``python manage.py runserver --help`` for more information additional options.
 
 Install
 -------
@@ -17,7 +34,7 @@ Install
 
     INSTALLED_APPS = [
         ...
-        'settings_startup',
+        'django_settings_startup',
     ]
 
 Lastest Version
