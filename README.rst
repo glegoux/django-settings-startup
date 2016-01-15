@@ -1,7 +1,7 @@
 Django Settings On Startup
 ==========================
 
-See your chosen settings on output when django is starting with ``runserver`` command,  
+See your chosen settings on standard output when django is starting with ``runserver`` command with   
 an additional CLI option.
 
 
@@ -19,7 +19,7 @@ Additional CLI Options
 ~~~~~~~~~~~~~~~~~~~~~~
 
 --config
-  Show your settings on output.
+  Show your settings on standard output.
 
 Please see ``python manage.py runserver --help`` for more information additional options.
 
