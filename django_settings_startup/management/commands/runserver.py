@@ -21,7 +21,7 @@ class Command(BaseCommand):
     option_list = BaseCommand.option_list + (
         make_option(
             '--config', action='store_true', dest='use_config', default=False,
-            help='Show your settings on output.'),
+            help='Show your settings on standard output.'),
     )
 
     def inner_run(self, *args, **options):
