@@ -5,7 +5,7 @@ See your chosen settings on standard output when django is starting with ``runse
 an additional CLI option.
 
 
-For Django 1.8.5 and python 3.4.
+For Django 1.8.5 and Python 3.4.
 
 Usage
 -----
