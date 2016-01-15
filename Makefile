@@ -5,8 +5,8 @@ SHELL = /usr/bin/env bash
 PYTHON = python3.4
 PIP = pip3
 SETUP = setup.py
-VERSION = $(shell $(PYTHON) setup.py --version)
-PACKNAME = $(shell $(PYTHON) setup.py --name)
+VERSION = $(shell $(PYTHON) $(SETUP) --version)
+PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
 INSTALL_FILES = install-files.txt
 PYPI_CONFIG_FILE = .pypirc
 
