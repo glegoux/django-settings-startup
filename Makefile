@@ -60,9 +60,10 @@ download:
 uninstall:
 	### uninstall python package ###
 	@read -p "Do you want to uninstall this version $(VERSION) ? (y/n): " answer; \
-	if [ "$${answer}" != "y" ]; then exit; fi;
+	if [ "$${answer}" != "y" ]; then exit; fi
 	### uninstall setup package ###
-	@cat $(INSTALL_FILES) | xargs rm -rvf;
+	@cat $(INSTALL_FILES) | xargs rm -rvf
+	@rm -rvf $(INSTALL_FILES)
 	### uninstall pip package ###
 	@$(PIP) uninstall "$(PACKNAME)"=="$(VERSION)"
 
@@ -72,5 +73,6 @@ clean:
 	if [ "$${answer}" != "y" ]; then exit; fi;
 	@rm -rfv ./build/
 	@rm -rfv ./dist/
+	@rm -rfv *.egg-info
 	@rm -rfv $(shell find . -name '*.pyc')
 	@rm -rfv $(shell find . -name '__pycache__')
