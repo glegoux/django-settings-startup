@@ -42,6 +42,11 @@ Latest Version
 
 1.0
 
+Documentation
+-------------
+
+http://django-settings-startup.readthedocs.org/en/latest/
+
 Source Code
 -----------
 
