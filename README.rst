@@ -37,7 +37,7 @@ Install
         ...
     ]
 
-It is important to put this app in first (before native django app), to override the command ``runserver``.
+It is important to install this app in first (before native django apps), to override the command ``runserver``.
 
 Latest Version
 ---------------
