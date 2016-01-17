@@ -16,6 +16,6 @@ class TestCommand(TestCase):
         django.setup()
         pid = os.fork()
         if pid == 0:
-          call_command('runserver', use_config=True, interactive=False)
+          call_command('runserver', use_config=True)
         time.sleep(2)
         os.kill(pid, signal.SIGTERM)
