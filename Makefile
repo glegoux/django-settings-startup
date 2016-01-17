@@ -11,7 +11,7 @@ INSTALL_FILES = install-files.txt
 PYPI_CONFIG_FILE = .pypirc
 
 usage:
-	@echo "targets include: usage all version view hidden gen install deploy download uninstall clean"
+	@echo "targets include: usage all version view hidden test gen install deploy download uninstall clean"
 
 all: deploy
 
@@ -27,6 +27,10 @@ view:
 hidden:
 	### hidden data ###
 	@ls -ad --color .* | sed 1,2d
+
+test:
+	### tests ###
+	@$(PYTHON) $(SETUP) test
 
 gen:
 	### generate python package ###
@@ -65,7 +69,7 @@ uninstall:
 	@cat $(INSTALL_FILES) | xargs rm -rvf
 	@rm -rvf $(INSTALL_FILES)
 	### uninstall pip package ###
-	@$(PIP) uninstall "$(PACKNAME)"=="$(VERSION)"
+	@$(PIP) uninstall "$(PACKNAME)"
 
 clean:
 	### clean python package ###

@@ -23,7 +23,7 @@ setup(
     maintainer='Gilles LEGOUX',
     maintainer_email='gilles.legoux@gmail.com',
     tests_require=['Django>=1.8.5'],
-    test_suite='tests.test',
+    test_suite='tests',
     platforms='any',
     classifiers=[
         'Environment :: Web Environment',

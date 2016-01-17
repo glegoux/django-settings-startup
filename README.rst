@@ -33,9 +33,11 @@ Install
 2. Add "settings-startup" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
-        ...
         'django_settings_startup',
+        ...
     ]
+::
+It is important to put this app in first (before native django app), to override the command ``runserver``.
 
 Latest Version
 ---------------
