@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.core.management.commands.runserver import Command as BaseCommand
-from django.core.management.base import CommandError, handle_default_options
 from optparse import make_option
 
 def print_settings():
@@ -18,11 +17,11 @@ def print_settings():
 
 
 class Command(BaseCommand):
-    option_list = BaseCommand.option_list + (
-        make_option(
-            '--config', action='store_true', dest='use_config', default=False,
-            help='Show your settings on standard output.'),
-    )
+
+    def add_arguments(self, parser):
+        parser.add_argument('--config', action='store_true', dest='use_config', default=False,
+            help='Show your settings on standard output.')
+        super(Command, self).add_arguments(parser)
 
     def inner_run(self, *args, **options):
         use_config = options.get('use_config')
