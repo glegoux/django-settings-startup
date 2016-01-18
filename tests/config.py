@@ -15,8 +15,6 @@ import os
 
 APPLICATION_STAGE="test"
 
-TEST_RUNNER = 'testing.DatabaselessTestRunner'
-
 BASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'tests')
 
 # Quick-start development settings - unsuitable for production
