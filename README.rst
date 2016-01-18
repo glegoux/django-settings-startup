@@ -30,7 +30,7 @@ Install
 
     pip install django-settings-startup
 
-2. Add "django_settings_startup" in first rank to your INSTALLED_APPS setting like this::
+2. Add "django_settings_startup" in first rank to your INSTALLED_APPS settings like this::
 
     INSTALLED_APPS = [
         'django_settings_startup',
