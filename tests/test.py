@@ -12,10 +12,24 @@ application = get_wsgi_application()
 
 class TestCommand(TestCase):
 
-    def test_command_config(self):
+    @classmethod
+    def setUpClass(cls):
         django.setup()
+
+    @classmethod
+    def tearDownClass(cls):
+        pass
+
+    def test_with_config(self):
         pid = os.fork()
         if pid == 0:
           call_command('runserver', use_config=True)
+        time.sleep(2)
+        os.kill(pid, signal.SIGTERM)
+
+    def test_without_config(self):
+        pid = os.fork()
+        if pid == 0:
+          call_command('runserver', use_config=False)
         time.sleep(2)
         os.kill(pid, signal.SIGTERM)
