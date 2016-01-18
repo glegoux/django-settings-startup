@@ -58,3 +58,12 @@ PyPI
 ----
 
 https://pypi.python.org/pypi/django-settings-startup
+
+Useful links
+------------
+
+* https://docs.djangoproject.com/en/1.8/ref/django-admin/#running-management-commands-from-your-code
+* https://docs.djangoproject.com/en/1.8/howto/custom-management-commands/
+* https://github.com/django/django/blob/master/django/core/management/commands/runserver.py
+* https://github.com/django/django/blob/master/django/core/management/base.py
+* https://github.com/django/django/blob/master/django/core/management/commands/testserver.py
