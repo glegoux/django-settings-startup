@@ -47,17 +47,17 @@ Latest Version
 Documentation
 -------------
 
-http://django-settings-startup.readthedocs.org/en/latest/
+* http://django-settings-startup.readthedocs.org/en/latest/
 
 Source Code
 -----------
 
-https://github.com/glegoux/django-settings-startup/
+* https://github.com/glegoux/django-settings-startup/
 
 PyPI
 ----
 
-https://pypi.python.org/pypi/django-settings-startup
+* https://pypi.python.org/pypi/django-settings-startup
 
 Useful links
 ------------
