@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.core.management.commands.runserver import Command as BaseCommand
 
-
 def print_settings():
     print("Settings django...")
     d = {}
@@ -14,7 +13,6 @@ def print_settings():
     for k in keys:
         print('%s = %r' % (k, d[k]))
     print("...OK\n")
-
 
 class Command(BaseCommand):
 
