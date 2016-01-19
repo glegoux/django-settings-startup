@@ -17,15 +17,15 @@ def print_settings():
 
 
 class Command(BaseCommand):
-    option_list = BaseCommand.option_list + (
-        make_option(
-            '--config', action='store_true', dest='use_config', default=False,
-            help='Show your settings on standard output.'),
-    )
 
-    def inner_run(self, *args, **options):
+    def add_arguments(self, parser):
+        parser.add_argument('--config', action='store_true', dest='use_config', default=False,
+            help='Show your settings on standard output.')
+        super(Command, self).add_arguments(parser)
+
+    def handle(self, *fixture_labels, **options):
         use_config = options.get('use_config')
         if use_config:
           print_settings()
-        super(Command, self).inner_run(*args, **options)
+        super(Command, self).handle(*fixture_labels, **options)
 
