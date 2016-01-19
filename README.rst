@@ -7,9 +7,9 @@ an additional CLI option.
 
 For Django 1.8.5 and Python 3.4.
 
-.. image:: https://travis-ci.org/glegoux/django-settings-startup.svg
-  :target https://travis-ci.org/glegoux/django-settings-startup
-  :alt: travis-status
+.. image:: https://travis-ci.org/glegoux/django-settings-startup.svg?branch=master
+    :target: https://travis-ci.org/glegoux/django-settings-startup
+    :alt: travis-status
 
 Usage
 -----
