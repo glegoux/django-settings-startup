@@ -47,23 +47,24 @@ Latest Version
 Documentation
 -------------
 
-http://django-settings-startup.readthedocs.org/en/latest/
+* http://django-settings-startup.readthedocs.org/en/latest/
 
 Source Code
 -----------
 
-https://github.com/glegoux/django-settings-startup/
+* https://github.com/glegoux/django-settings-startup/
 
 PyPI
 ----
 
-https://pypi.python.org/pypi/django-settings-startup
+* home page: https://pypi.python.org/pypi/django-settings-startup
+* ranking: http://pypi-ranking.info/module/django-settings-startup
 
 Useful links
 ------------
 
-https://github.com/django/django/blob/stable/1.8.x/django/core/management/commands/runserver.py
-https://github.com/django/django/blob/stable/1.8.x/django/core/management/base.py
-https://github.com/django/django/blob/stable/1.8.x/django/core/management/commands/testserver.py
-https://docs.djangoproject.com/en/1.8/howto/custom-management-commands/
-https://docs.djangoproject.com/en/1.8/ref/django-admin/#running-management-commands-from-your-code
+* https://github.com/django/django/blob/stable/1.8.x/django/core/management/commands/runserver.py
+* https://github.com/django/django/blob/stable/1.8.x/django/core/management/base.py
+* https://github.com/django/django/blob/stable/1.8.x/django/core/management/commands/testserver.py
+* https://docs.djangoproject.com/en/1.8/howto/custom-management-commands/
+* https://docs.djangoproject.com/en/1.8/ref/django-admin/#running-management-commands-from-your-code
