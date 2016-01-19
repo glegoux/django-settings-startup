@@ -1,5 +1,4 @@
 /.idea/
-/install-files.txt
 /build/
 /dist/
 /*.egg-info/
