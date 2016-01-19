@@ -1,6 +1,8 @@
 Django Settings On Startup
 ==========================
 
+![alt text][travis-status]
+
 See your chosen settings on standard output when django is starting with ``runserver`` command with   
 an additional CLI option.
 
@@ -54,11 +56,16 @@ Source Code
 
 * https://github.com/glegoux/django-settings-startup/
 
-PyPI
-----
+PyPI : open source Python packages
+----------------------------------
 
 * home page: https://pypi.python.org/pypi/django-settings-startup
 * ranking: http://pypi-ranking.info/module/django-settings-startup
+
+Travis CI : continous integration
+---------------------------------
+
+* https://travis-ci.org/glegoux/django-settings-startup
 
 Useful links
 ------------
@@ -68,3 +75,6 @@ Useful links
 * https://github.com/django/django/blob/stable/1.8.x/django/core/management/commands/testserver.py
 * https://docs.djangoproject.com/en/1.8/howto/custom-management-commands/
 * https://docs.djangoproject.com/en/1.8/ref/django-admin/#running-management-commands-from-your-code
+
+
+[travis-status]: https://travis-ci.org/glegoux/django-settings-startup.svg "travis-status" 
