@@ -73,6 +73,11 @@ Travis CI : continous integration
 
 * https://travis-ci.org/glegoux/django-settings-startup
 
+Coveralls : code coverage
+-------------------------
+
+* https://coveralls.io/github/glegoux/django-settings-startup
+
 Useful links
 ------------
 
