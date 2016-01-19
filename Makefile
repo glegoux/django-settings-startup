@@ -5,7 +5,6 @@ PIP = pip3
 SETUP = setup.py
 VERSION = $(shell $(PYTHON) $(SETUP) --version)
 PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
-INSTALL_FILES = install-files.txt
 PYPI_CONFIG_FILE = .pypirc
 
 .PHONY: usage
@@ -48,7 +47,7 @@ install: gen
 	### install python package ###
 	@read -p "Do you want to install this version $(VERSION) ? (y/n): " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
-	$(PYTHON) $(SETUP) install --user --record $(INSTALL_FILES)
+	$(PIP) install --user .
 
 .PHONY: deploy
 deploy: gen
@@ -74,9 +73,6 @@ uninstall:
 	### uninstall python package ###
 	@read -p "Do you want to uninstall this version $(VERSION) ? (y/n): " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi
-	### uninstall setup package ###
-	@cat $(INSTALL_FILES) | xargs rm -rvf
-	@rm -rvf $(INSTALL_FILES)
 	### uninstall pip package ###
 	@$(PIP) uninstall "$(PACKNAME)"
 
