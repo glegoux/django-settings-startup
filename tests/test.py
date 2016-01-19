@@ -48,7 +48,6 @@ class TestCommand(TestCase):
                         break
                 self.assertEqual(found, True, 'APPLICATION_STAGE does not exist')
 
-
     def test_without_config(self):
         """ Test if settings are not written on standard output """
         r, w = os.pipe()
@@ -70,3 +69,4 @@ class TestCommand(TestCase):
                     s = line.split(' = ')
                     if len(s) == 1 and s[0] == 'Settings django...':
                         self.fail("Settings django should not be present on standard output")
+
