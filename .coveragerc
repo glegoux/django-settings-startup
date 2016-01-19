@@ -1,2 +1,2 @@
 [run]
-source = tests
+source = django_settings_startup
