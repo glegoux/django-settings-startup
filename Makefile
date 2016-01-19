@@ -1,7 +1,5 @@
 SHELL = /usr/bin/env bash
 
-.PHONY: all usage version view hidden gen install deploy download uninstall clean
-
 PYTHON = python3.4
 PIP = pip3
 SETUP = setup.py
@@ -10,40 +8,49 @@ PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
 INSTALL_FILES = install-files.txt
 PYPI_CONFIG_FILE = .pypirc
 
+.PHONY: usage
 usage:
 	@echo "targets include: usage all version view hidden test gen install deploy download uninstall clean"
 
+.PHONY: all
 all: deploy
 
+.PHONY: version
 version:
 	@echo $(VERSION)
 
+.PHONY: view
 view:
 	### package file system ###
 	@tree -C $$PWD; \
 	du -sh $$PWD; \
 	echo "$(shell cat $(shell find . -name '*.py')  | wc -l) python code lines"
 
+.PHONY: hidden
 hidden:
 	### hidden data ###
 	@ls -ad --color .* | sed 1,2d
 
+.PHONY: test
 test:
 	### tests ###
 	@$(PYTHON) $(SETUP) test
 
+.PHONY: gen
 gen:
 	### generate python package ###
 	@read -p "Do you want to generate this version $(VERSION) ? (y/n): " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	$(PYTHON) $(SETUP) sdist
 
+.PHONY: install
 install: gen
 	### install python package ###
 	@read -p "Do you want to install this version $(VERSION) ? (y/n): " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	$(PYTHON) $(SETUP) install --user --record $(INSTALL_FILES)
 
+.PHONY: deploy
 deploy: gen
 	### deploy python package to PyPI depot ###
 	@read -p "Do you want to deploy this version $(VERSION) ? (y/n): " answer; \
@@ -55,12 +62,14 @@ deploy: gen
 		--password "$${passwd}"; \
 	echo "...OK"
 
+.PHONY: download
 download:
 	### download python package from PyPI depot ###
 	@read -p "Do you want to download then install this version $(VERSION) ? (y/n): " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	$(PIP) install --user "$(PACKNAME)"=="$(VERSION)"
 
+.PHONY: uninstall
 uninstall:
 	### uninstall python package ###
 	@read -p "Do you want to uninstall this version $(VERSION) ? (y/n): " answer; \
@@ -71,6 +80,7 @@ uninstall:
 	### uninstall pip package ###
 	@$(PIP) uninstall "$(PACKNAME)"
 
+.PHONY: clean
 clean:
 	### clean python package ###
 	@read -p "Do you want to clean the project ? (y/n): " answer; \
