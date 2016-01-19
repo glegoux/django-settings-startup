@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.core.management.commands.runserver import Command as BaseCommand
-from optparse import make_option
+
 
 def print_settings():
     print("Settings django...")
