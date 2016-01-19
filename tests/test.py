@@ -26,7 +26,6 @@ class TestCommand(TestCase):
         """ Test if settings are written on standard output """
         r, w = os.pipe()
         pid = os.fork()
-        print("PID " + str(pid))
         if pid == 0:
             os.close(r)
             with os.fdopen(w, 'w') as w:
