@@ -3,7 +3,7 @@ Django Settings On Startup
 
 .. image:: https://travis-ci.org/glegoux/django-settings-startup.svg
   :alt: Travis CI build status
-  :align: right
+  :align: right  
 
 See your chosen settings on standard output when django is starting with ``runserver`` command with   
 an additional CLI option.
