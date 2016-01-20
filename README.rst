@@ -46,7 +46,7 @@ It is important to install this app in first (before native django apps), to ove
 Latest Version
 ---------------
 
-1.0
+.. include:: VERSION
 
 Documentation
 -------------
