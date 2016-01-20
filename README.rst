@@ -48,13 +48,13 @@ Version
 
 see `VERSION <https://github.com/glegoux/django-settings-startup/blob/master/VERSION>`_
 
-Documentation
--------------
+Read The Docs : Documentation
+-----------------------------
 
 * http://django-settings-startup.readthedocs.org/en/latest/
 
-Source Code
------------
+GitHub : Source Code
+--------------------
 
 * https://github.com/glegoux/django-settings-startup/
 
