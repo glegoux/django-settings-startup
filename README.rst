@@ -46,7 +46,7 @@ It is important to install this app in first (before native django apps), to ove
 Latest Version
 ---------------
 
-.. include:: VERSION
+see `VERSION <https://github.com/glegoux/django-settings-startup/blob/master/VERSION>`_
 
 Documentation
 -------------
