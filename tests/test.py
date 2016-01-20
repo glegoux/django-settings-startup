@@ -4,7 +4,6 @@ import signal
 import sys
 import time
 
-import django
 from django.core.management import call_command
 from django.test import TestCase
 from django.core.wsgi import get_wsgi_application
@@ -15,14 +14,6 @@ application = get_wsgi_application()
 
 
 class TestCommand(TestCase):
-
-    @classmethod
-    def setUpClass(cls):
-        django.setup()
-
-    @classmethod
-    def tearDownClass(cls):
-        pass
 
     def test_with_config(self):
         """ Test if settings are written on standard output """
