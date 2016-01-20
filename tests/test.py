@@ -1,4 +1,4 @@
-import io
+from io import StringIO
 import os
 import signal
 import sys
@@ -30,8 +30,11 @@ class TestCommand(TestCase):
         os.kill(pid, signal.SIGTERM)
         found = False
         with os.fdopen(r) as r:
-            msg = r.read()
-            with io.StringIO(msg) as b:
+            if sys.version_info >= (3, 0):
+                msg = r.read()
+            else:
+                msg = unicode(r.read())
+            with StringIO(msg) as b:
                 for line in b.readlines():
                     line = line.rstrip()
                     s = line.split(' = ')
@@ -55,8 +58,11 @@ class TestCommand(TestCase):
         os.close(w)
         os.kill(pid, signal.SIGTERM)
         with os.fdopen(r) as r:
-            msg = r.read()
-            with io.StringIO(msg) as b:
+            if sys.version_info >= (3, 0):
+                msg = r.read()
+            else:
+                msg = unicode(r.read())
+            with StringIO(msg) as b:
                 for line in b.readlines():
                     line = line.rstrip()
                     s = line.split(' = ')

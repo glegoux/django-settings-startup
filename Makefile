@@ -1,7 +1,8 @@
 SHELL = /usr/bin/env bash
 
-PYTHON = python3.4
-PIP = pip3
+PYTHON = python
+PIP = pip
+BIN_DIR = /usr/bin
 SETUP = setup.py
 VERSION = $(shell $(PYTHON) $(SETUP) --version)
 PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
@@ -9,14 +10,34 @@ PYPI_CONFIG_FILE = .pypirc
 
 .PHONY: usage
 usage:
-	@echo "targets include: usage all version view hidden test gen install deploy download uninstall clean"
+	@echo "targets include: usage all version switch view hidden test gen install deploy download uninstall clean"
 
 .PHONY: all
 all: deploy
 
 .PHONY: version
 version:
-	@echo $(VERSION)
+	@$(PYTHON) --version
+	@$(PIP) --version
+	@echo $(PACKNAME) $(VERSION)
+
+.PHONY: switch
+switch:
+	### switch between python 2 and 3 ###
+	@$(PYTHON) --version 2>&1
+	@read -p "Do you want to switch of python version ? (y/n): " answer; \
+	if [ "$${answer}" != "y" ]; then exit; fi;
+	@echo -n 'from '
+	@$(PYTHON) --version 2>&1
+	@if $(PYTHON) --version 2>&1 | grep -q "Python 2"; then \
+		sudo ln -sfv "$(BIN_DIR)/python3" "$(BIN_DIR)/python"; \
+		sudo ln -sfv "$(BIN_DIR)/pip3" "$(BIN_DIR)/pip"; \
+	elif $(PYTHON) --version 2>&1 | grep -q "Python 3"; then \
+		sudo ln -sfv "$(BIN_DIR)/python2" "$(BIN_DIR)/python"; \
+		sudo ln -sfv "$(BIN_DIR)/pip2" "$(BIN_DIR)/pip"; \
+	fi
+	@echo -n 'to '
+	@$(PYTHON) --version  2>&1
 
 .PHONY: view
 view:
