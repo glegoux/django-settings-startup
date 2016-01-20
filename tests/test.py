@@ -32,7 +32,7 @@ class TestCommand(TestCase):
             os.close(r)
             with os.fdopen(w, 'w') as w:
                 sys.stdout = w
-                call_command('runserver', use_config=True)
+                call_command('runserver', use_reloader=False, use_config=True)
                 sys.exit(0)
         time.sleep(2)
         os.close(w)
@@ -58,7 +58,7 @@ class TestCommand(TestCase):
             os.close(r)
             with os.fdopen(w, 'w') as w:
                 sys.stdout = w
-                call_command('runserver', use_config=False)
+                call_command('runserver', use_reloader=False, use_config=False)
                 sys.exit(0)
         time.sleep(2)
         os.close(w)
