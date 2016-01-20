@@ -43,8 +43,8 @@ Install
 
 It is important to install this app in first (before native django apps), to override the command ``runserver``.
 
-Latest Version
----------------
+Version
+-------
 
 see `VERSION <https://github.com/glegoux/django-settings-startup/blob/master/VERSION>`_
 
@@ -82,3 +82,8 @@ Useful links
 * https://github.com/django/django/blob/stable/1.8.x/django/core/management/commands/testserver.py
 * https://docs.djangoproject.com/en/1.8/howto/custom-management-commands/
 * https://docs.djangoproject.com/en/1.8/ref/django-admin/#running-management-commands-from-your-code
+
+License
+-------
+
+see `LICENSE <https://github.com/glegoux/django-settings-startup/blob/master/LICENSE>`_
