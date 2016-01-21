@@ -25,6 +25,7 @@ setup(
     tests_require=['Django>=1.8.5'],
     test_suite='tests',
     platforms='any',
+    zip_safe=False,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
