@@ -16,8 +16,12 @@ For Django 1.8.5 and Python 2.7, 3.2, 3.3, 3.4.
     :alt: pypi-version
 
 .. image:: https://img.shields.io/pypi/pyversions/django-settings-startup.svg
-    :target: https://travis-ci.org/glegoux/django-settings-startup
+    :target: https://pypi.python.org/pypi/django-settings-startup
     :alt: pypi-pythonversion
+
+.. image:: https://img.shields.io/pypi/implementation/django-settings-startup.svg
+    :target: https://pypi.python.org/pypi/django-settings-startup
+    :alt: pypi-implementation
 
 .. image:: https://img.shields.io/pypi/wheel/django-settings-startup.svg
     :target: https://pypi.python.org/pypi/django-settings-startup
