@@ -15,7 +15,7 @@ usage:
 	@echo "targets include: usage all version pyversion switch view hidden test gen install deploy download uninstall clean"
 
 .PHONY: all
-all: deploy
+all: switch install deploy uninstall download clean
 
 .PHONY: pyversion
 pyversion:
@@ -31,18 +31,18 @@ version: pyversion
 switch: pyversion
 	### switch between python 2 and 3 ###
 	@read -p "Do you want to switch of python version ? (y/n): " answer; \
-	if [ "$${answer}" != "y" ]; then exit; fi;
-	@echo -n 'from '
-	@$(PYTHON) --version 2>&1
-	@if $(PYTHON) --version 2>&1 | grep -q "Python 2"; then \
+	if [ "$${answer}" != "y" ]; then exit; fi; \
+	echo -n 'from '; \
+	$(PYTHON) --version 2>&1; \
+	if $(PYTHON) --version 2>&1 | grep -q "Python 2"; then \
 		sudo ln -sfv "$(BIN_DIR)/python3" "$(BIN_DIR)/python"; \
 		sudo ln -sfv "$(BIN_DIR)/pip3" "$(BIN_DIR)/pip"; \
 	elif $(PYTHON) --version 2>&1 | grep -q "Python 3"; then \
 		sudo ln -sfv "$(BIN_DIR)/python2" "$(BIN_DIR)/python"; \
 		sudo ln -sfv "$(BIN_DIR)/pip2" "$(BIN_DIR)/pip"; \
-	fi
-	@echo -n 'to '
-	@$(PYTHON) --version  2>&1
+	fi; \
+	echo -n 'to '; \
+	$(PYTHON) --version  2>&1
 
 .PHONY: version view
 view:
@@ -62,7 +62,7 @@ test: version
 	@$(PYTHON) $(SETUP) test
 
 .PHONY: gen
-gen: version
+gen: version test
 	### generate python package ###
 	@read -p "Do you want to generate this version $(VERSION) ? (y/n): " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
