@@ -45,7 +45,7 @@ For Django 1.8.5 and Python 2.7, 3.2, 3.3, 3.4.
 
 .. image:: https://img.shields.io/pypi/dm/django-settings-startup.svg
     :target: http://pypi-ranking.info/module/django-settings-startup
-    :alt: download
+    :alt: pypi-download
 
 Usage
 -----
