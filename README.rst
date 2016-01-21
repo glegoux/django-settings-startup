@@ -20,7 +20,7 @@ Once installed, using this command::
 
 
 Additional CLI Options
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 --config
   Show your settings on standard output.
