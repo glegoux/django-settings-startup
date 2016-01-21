@@ -106,9 +106,9 @@ uninstall: version
 clean:
 	### clean python package ###
 	@read -p "Do you want to clean the project ? (y/n): " answer; \
-	if [ "$${answer}" != "y" ]; then exit; fi;
-	@rm -rfv ./build/
-	@rm -rfv ./dist/
-	@rm -rfv *.egg-info
-	@rm -rfv $(shell find . -name '*.pyc')
-	@rm -rfv $(shell find . -name '__pycache__')
+	if [ "$${answer}" != "y" ]; then exit; fi; \
+	rm -rfv ./build/; \
+	rm -rfv ./dist/; \
+	rm -rfv *.egg-info; \
+	rm -rfv $(shell find . -name '*.pyc'); \
+	rm -rfv $(shell find . -name '__pycache__')
