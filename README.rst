@@ -83,6 +83,11 @@ Version
 
 see `VERSION <https://github.com/glegoux/django-settings-startup/blob/master/VERSION>`_
 
+Changelog
+---------
+
+see `CHANGELOG <https://github.com/glegoux/django-settings-startup/blob/master/CHANGELOG>`_
+
 Read The Docs : Documentation
 -----------------------------
 
