@@ -7,6 +7,10 @@ an additional CLI option.
 
 For Django 1.8.5 and Python 2.7, 3.2, 3.3, 3.4.
 
+.. image:: https://img.shields.io/pypi/status/django-settings-startup.svg
+    :target: https://pypi.python.org/pypi/django-settings-startup
+    :alt: pypi-stability
+
 .. image:: https://img.shields.io/pypi/v/django-settings-startup.svg
     :target: https://pypi.python.org/pypi/django-settings-startup
     :alt: pypi-version
