@@ -5,6 +5,7 @@ PIP = pip
 BIN_DIR = /usr/bin
 MANAGE = tests/manage.py
 SETUP = setup.py
+BUILD = sdist bdist_wheel
 VERSION = $(shell $(PYTHON) $(SETUP) --version)
 PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
 PYPI_CONFIG_FILE = .pypirc
@@ -63,7 +64,7 @@ gen:
 	### generate python package ###
 	@read -p "Do you want to generate this version $(VERSION) ? (y/n): " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
-	$(PYTHON) $(SETUP) sdist
+	$(PYTHON) $(SETUP) $(BUILD)
 
 .PHONY: install
 install: gen
