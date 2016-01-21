@@ -7,9 +7,29 @@ an additional CLI option.
 
 For Django 1.8.5 and Python 2.7, 3.2, 3.3, 3.4.
 
+.. image:: https://img.shields.io/pypi/v/django-settings-startup.svg
+    :target: https://pypi.python.org/pypi/django-settings-startup
+    :alt: pypi-version
+
+.. image:: https://img.shields.io/pypi/pyversions/django-settings-startup.svg
+    :target: https://travis-ci.org/glegoux/django-settings-startup
+    :alt: pypi-pythonversion
+
 .. image:: https://travis-ci.org/glegoux/django-settings-startup.svg?branch=master
     :target: https://travis-ci.org/glegoux/django-settings-startup
     :alt: travis-status
+
+.. image:: https://img.shields.io/badge/docs-latest-brightgreen.svg
+    :target: http://django-settings-startup.readthedocs.org/en/latest/
+    :alt: doc
+
+.. image:: https://img.shields.io/packagist/l/doctrine/orm.svg
+    :target: https://github.com/glegoux/django-settings-startup/blob/master/LICENSE
+    :alt: license
+
+.. image:: https://img.shields.io/pypi/dm/django-settings-startup.svg
+    :target: http://pypi-ranking.info/module/django-settings-startup
+    :alt: download
 
 Usage
 -----
