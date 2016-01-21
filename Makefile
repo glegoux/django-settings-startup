@@ -3,6 +3,7 @@ SHELL = /usr/bin/env bash
 PYTHON = python
 PIP = pip
 BIN_DIR = /usr/bin
+MANAGE = tests/manage.py
 SETUP = setup.py
 VERSION = $(shell $(PYTHON) $(SETUP) --version)
 PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
@@ -19,6 +20,7 @@ all: deploy
 version:
 	@$(PYTHON) --version
 	@$(PIP) --version
+	@echo -n "Django "; $(PYTHON) $(MANAGE) --version
 	@echo $(PACKNAME) $(VERSION)
 
 .PHONY: switch
