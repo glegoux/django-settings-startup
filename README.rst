@@ -19,8 +19,7 @@ Once installed, using this command::
     python manage.py runserver --config
 
 
-Additional CLI Options
-^^^^^^^^^^^^^
+**Additional CLI Options**
 
 --config
   Show your settings on standard output.
