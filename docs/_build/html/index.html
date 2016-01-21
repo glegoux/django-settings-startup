@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to django-settings-startup’s documentation! &mdash; django-settings-startup 1.0 documentation</title>
+  <title>Django Settings On Startup &mdash; django-settings-startup 1.0 documentation</title>
   
 
   
@@ -79,9 +79,23 @@
           
             
             
-                <ul class="simple">
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Django Settings On Startup</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#install">Install</a></li>
+<li><a class="reference internal" href="#version">Version</a></li>
+<li><a class="reference internal" href="#read-the-docs-documentation">Read The Docs : Documentation</a></li>
+<li><a class="reference internal" href="#github-source-code">GitHub : Source Code</a></li>
+<li><a class="reference internal" href="#pypi-open-source-python-packages">PyPI : open source Python packages</a></li>
+<li><a class="reference internal" href="#travis-ci-continous-integration">Travis CI : continous integration</a></li>
+<li><a class="reference internal" href="#coveralls-code-coverage">Coveralls : code coverage</a></li>
+<li><a class="reference internal" href="#useful-links">Useful links</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
 </ul>
-
+</li>
+</ul>
+</div>
             
           
         </div>
@@ -110,7 +124,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="#">Docs</a> &raquo;</li>
       
-    <li>Welcome to django-settings-startup&#8217;s documentation!</li>
+    <li>Django Settings On Startup</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -124,21 +138,108 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-django-settings-startup-s-documentation">
-<h1>Welcome to django-settings-startup&#8217;s documentation!<a class="headerlink" href="#welcome-to-django-settings-startup-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="django-settings-on-startup">
+<h1>Django Settings On Startup<a class="headerlink" href="#django-settings-on-startup" title="Permalink to this headline">¶</a></h1>
+<p>See your chosen settings on standard output when django is starting with <code class="docutils literal"><span class="pre">runserver</span></code> command with
+an additional CLI option.</p>
+<p>For Django 1.8.5 and Python 2.7, 3.2, 3.3, 3.4.</p>
+<p><strong>Python package information</strong></p>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/django-settings-startup"><img alt="pypi-stability" src="https://img.shields.io/pypi/status/django-settings-startup.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/django-settings-startup"><img alt="pypi-version" src="https://img.shields.io/pypi/v/django-settings-startup.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/django-settings-startup"><img alt="pypi-pythonversion" src="https://img.shields.io/pypi/pyversions/django-settings-startup.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/django-settings-startup"><img alt="pypi-implementation" src="https://img.shields.io/pypi/implementation/django-settings-startup.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/django-settings-startup"><img alt="pypi-build" src="https://img.shields.io/pypi/wheel/django-settings-startup.svg" /></a>
+<p><strong>Other information</strong></p>
+<a class="reference external image-reference" href="https://travis-ci.org/glegoux/django-settings-startup"><img alt="travis-status" src="https://travis-ci.org/glegoux/django-settings-startup.svg?branch=master" /></a>
+<a class="reference external image-reference" href="http://django-settings-startup.readthedocs.org/en/latest/"><img alt="doc" src="https://img.shields.io/badge/docs-latest-brightgreen.svg" /></a>
+<a class="reference external image-reference" href="https://github.com/glegoux/django-settings-startup/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/packagist/l/doctrine/orm.svg" /></a>
+<a class="reference external image-reference" href="http://pypi-ranking.info/module/django-settings-startup"><img alt="pypi-download" src="https://img.shields.io/pypi/dm/django-settings-startup.svg" /></a>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Once installed, using this command:</p>
+<div class="highlight-python"><div class="highlight"><pre>python manage.py runserver --config
+</pre></div>
+</div>
+<p><strong>Additional CLI Options</strong></p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">--config</span></kbd></td>
+<td>Show your settings on standard output.</td></tr>
+</tbody>
+</table>
+<p>Please see <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span> <span class="pre">--help</span></code> for more information additional options.</p>
+</div>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Download package:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install django-settings-startup
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add &#8220;django_settings_startup&#8221; in first rank to your INSTALLED_APPS settings like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&#39;django_settings_startup&#39;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>It is important to install this app in first (before native django apps), to override the command <code class="docutils literal"><span class="pre">runserver</span></code>.</p>
+</div>
+<div class="section" id="version">
+<h2>Version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h2>
+<p>see <a class="reference external" href="https://github.com/glegoux/django-settings-startup/blob/master/VERSION">VERSION</a></p>
+</div>
+<div class="section" id="read-the-docs-documentation">
+<h2>Read The Docs : Documentation<a class="headerlink" href="#read-the-docs-documentation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
+<li><a class="reference external" href="http://django-settings-startup.readthedocs.org/en/latest/">http://django-settings-startup.readthedocs.org/en/latest/</a></li>
 </ul>
 </div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="github-source-code">
+<h2>GitHub : Source Code<a class="headerlink" href="#github-source-code" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span>Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span>Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span>Search Page</span></a></li>
+<li><a class="reference external" href="https://github.com/glegoux/django-settings-startup/">https://github.com/glegoux/django-settings-startup/</a></li>
 </ul>
+</div>
+<div class="section" id="pypi-open-source-python-packages">
+<h2>PyPI : open source Python packages<a class="headerlink" href="#pypi-open-source-python-packages" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>home page: <a class="reference external" href="https://pypi.python.org/pypi/django-settings-startup">https://pypi.python.org/pypi/django-settings-startup</a></li>
+<li>ranking: <a class="reference external" href="http://pypi-ranking.info/module/django-settings-startup">http://pypi-ranking.info/module/django-settings-startup</a></li>
+</ul>
+</div>
+<div class="section" id="travis-ci-continous-integration">
+<h2>Travis CI : continous integration<a class="headerlink" href="#travis-ci-continous-integration" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://travis-ci.org/glegoux/django-settings-startup">https://travis-ci.org/glegoux/django-settings-startup</a></li>
+</ul>
+</div>
+<div class="section" id="coveralls-code-coverage">
+<h2>Coveralls : code coverage<a class="headerlink" href="#coveralls-code-coverage" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://coveralls.io/github/glegoux/django-settings-startup">https://coveralls.io/github/glegoux/django-settings-startup</a></li>
+</ul>
+</div>
+<div class="section" id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/django/django/blob/stable/1.8.x/django/core/management/commands/runserver.py">https://github.com/django/django/blob/stable/1.8.x/django/core/management/commands/runserver.py</a></li>
+<li><a class="reference external" href="https://github.com/django/django/blob/stable/1.8.x/django/core/management/base.py">https://github.com/django/django/blob/stable/1.8.x/django/core/management/base.py</a></li>
+<li><a class="reference external" href="https://github.com/django/django/blob/stable/1.8.x/django/core/management/commands/testserver.py">https://github.com/django/django/blob/stable/1.8.x/django/core/management/commands/testserver.py</a></li>
+<li><a class="reference external" href="https://docs.djangoproject.com/en/1.8/howto/custom-management-commands/">https://docs.djangoproject.com/en/1.8/howto/custom-management-commands/</a></li>
+<li><a class="reference external" href="https://docs.djangoproject.com/en/1.8/ref/django-admin/#running-management-commands-from-your-code">https://docs.djangoproject.com/en/1.8/ref/django-admin/#running-management-commands-from-your-code</a></li>
+</ul>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>see <a class="reference external" href="https://github.com/glegoux/django-settings-startup/blob/master/LICENSE">LICENSE</a></p>
+</div>
 </div>
 
 
