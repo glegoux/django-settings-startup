@@ -81,12 +81,12 @@ It is important to install this app in first (before native django apps), to ove
 Version
 -------
 
-see `VERSION <https://github.com/glegoux/django-settings-startup/blob/2.x/VERSION>`_
+See `VERSION <https://github.com/glegoux/django-settings-startup/blob/2.x/VERSION>`_.
 
 Changelog
 ---------
 
-see `CHANGELOG <https://github.com/glegoux/django-settings-startup/blob/2.x/CHANGELOG>`_
+See `CHANGELOG <https://github.com/glegoux/django-settings-startup/blob/2.x/CHANGELOG>`_.
 
 Read The Docs : Documentation
 -----------------------------
@@ -126,4 +126,4 @@ Useful links
 License
 -------
 
-see `LICENSE <https://github.com/glegoux/django-settings-startup/blob/2.x/LICENSE>`_
+See `LICENSE <https://github.com/glegoux/django-settings-startup/blob/2.x/LICENSE>`_.
