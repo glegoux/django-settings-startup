@@ -8,7 +8,7 @@ def read(fname):
     with open(os.path.join(os.path.dirname(__file__), fname)) as fname:
         return fname.read()
 
-EXCLUDE_FROM_PACKAGES = ['docs', 'tests']
+EXCLUDE_FROM_PACKAGES = ['build', 'dist', 'docs', 'tests']
 
 setup(
     name='django-settings-startup',
