@@ -14,7 +14,8 @@ PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
 
 .PHONY: usage
 usage:
-	@echo "targets include: usage all version pyversion switch view hidden test gen install upload download uninstall clean"
+	@echo "targets include: usage all version pyversion switch view hidden"
+	@echo "                 test gen install upload download uninstall clean"
 
 .PHONY: all
 all: switch install upload uninstall download clean
@@ -46,8 +47,8 @@ switch: pyversion
 	echo -n 'to '; \
 	$(PYTHON) --version  2>&1
 
-.PHONY: version view
-view:
+.PHONY: view
+view: version
 	### package file system ###
 	@tree -C $$PWD; \
 	du -sh $$PWD; \
