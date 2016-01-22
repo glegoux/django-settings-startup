@@ -96,7 +96,7 @@ Read The Docs : Documentation
 GitHub : Source Code
 --------------------
 
-* https://github.com/glegoux/django-settings-startup/2.x/
+* https://github.com/glegoux/django-settings-startup/tree/2.x/
 
 PyPI : open source Python packages
 ----------------------------------
