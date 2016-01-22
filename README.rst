@@ -114,6 +114,11 @@ Coveralls : code coverage
 
 * https://coveralls.io/github/glegoux/django-settings-startup
 
+PEP8 : coding style
+-------------------
+
+* https://www.python.org/dev/peps/pep-0008/
+
 Useful links
 ------------
 

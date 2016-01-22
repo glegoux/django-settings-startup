@@ -2,7 +2,9 @@ SHELL = /usr/bin/env bash
 
 PYTHON = python
 PIP = pip
+PEP8 = pep8
 BIN_DIR = /usr/bin
+FILES = tests/ django_settings_startup/ setup.py
 MANAGE = tests/manage.py
 SETUP = setup.py
 BUILD = sdist bdist_wheel
@@ -16,7 +18,7 @@ PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
 .PHONY: usage
 usage:
 	@echo "targets include: usage all version pyversion switch view hidden register"
-	@echo "                 check test gen install upload download uninstall clean"
+	@echo "                 style check test gen install upload download uninstall clean"
 
 .PHONY: all
 all: switch install upload uninstall download clean
@@ -53,7 +55,7 @@ view: version
 	### package file system ###
 	@tree -C $$PWD; \
 	du -sh $$PWD; \
-	echo "$(shell cat $(shell find . -name '*.py')  | wc -l) python code lines"
+	echo "$(shell cat $(shell find $(FILES) -name '*.py')  | wc -l) python code lines"
 
 .PHONY: hidden
 hidden:
@@ -70,13 +72,18 @@ register:
 	less */PKG-INFO; \
 	$(PYTHON) $(SETUP) register -r $(REGISTER)
 
+.PHONY: style
+style: version
+	### coding style ###
+	@$(PEP8) $(FILES)
+
 .PHONY: check
 check: version
 	### check setup.py ###
 	@$(PYTHON) $(SETUP) check --restructuredtext
 
 .PHONY: test
-test: version
+test: version check style
 	### unit tests ###
 	@$(PYTHON) $(SETUP) test
 
