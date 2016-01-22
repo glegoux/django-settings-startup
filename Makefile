@@ -15,7 +15,7 @@ PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
 
 .PHONY: usage
 usage:
-	@echo "targets include: usage all version pyversion switch view hidden"
+	@echo "targets include: usage all version pyversion switch view hidden register"
 	@echo "                 check test gen install upload download uninstall clean"
 
 .PHONY: all
@@ -59,6 +59,16 @@ view: version
 hidden:
 	### hidden data ###
 	@ls -ad --color .* | sed 1,2d
+
+.PHONY: register
+register:
+	### register project ###
+	@echo -n "Do you want to register this project $(PACKNAME) to $(REGISTER)"; \
+	read -p " (y/n)? " answer; \
+	if [ "$${answer}" != "y" ]; then exit; fi; \
+	@$(PYTHON) $(SETUP) egg_info; \
+	less */PKG-INFO; \
+	$(PYTHON) $(SETUP) register -r $(REGISTER)
 
 .PHONY: check
 check: version
