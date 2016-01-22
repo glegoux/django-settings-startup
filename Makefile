@@ -8,6 +8,7 @@ SETUP = setup.py
 BUILD = sdist bdist_wheel
 REGISTER = pypitest
 UPLOAD_DIR = dist
+BUILD_DIR = build
 PYPI_CONFIG_FILE = .pypirc
 VERSION = $(shell $(PYTHON) $(SETUP) --version)
 PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
@@ -106,17 +107,17 @@ download: version
 uninstall: version
 	### uninstall python package ###
 	@read -p "Do you want to uninstall this version $(VERSION) (y/n)? " answer; \
-	if [ "$${answer}" != "y" ]; then exit; fi
+	if [ "$${answer}" != "y" ]; then exit; fi; \
 	### uninstall pip package ###
-	@$(PIP) uninstall "$(PACKNAME)"
+	$(PIP) uninstall "$(PACKNAME)"
 
 .PHONY: clean
 clean:
 	### clean python package ###
 	@read -p "Do you want to clean the project (y/n)? " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
-	rm -rfv ./build/; \
-	rm -rfv ./dist/; \
+	rm -rfv ./$(BUILD_DIR)/; \
+	rm -rfv ./$(UPLOAD_DIR)/; \
 	rm -rfv *.egg-info; \
 	rm -rfv $(shell find . -name '*.pyc'); \
 	rm -rfv $(shell find . -name '__pycache__')
