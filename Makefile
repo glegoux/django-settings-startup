@@ -33,7 +33,7 @@ version: pyversion
 .PHONY: switch
 switch: pyversion
 	### switch between python 2 and 3 ###
-	@read -p "Do you want to switch of python version ? (y/n): " answer; \
+	@read -p "Do you want to switch of python version (y/n)? " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	echo -n 'from '; \
 	$(PYTHON) --version 2>&1; \
@@ -67,25 +67,25 @@ test: version
 .PHONY: gen
 gen: version test
 	### generate python package ###
-	@read -p "Do you want to generate this version $(VERSION) ? (y/n): " answer; \
+	@read -p "Do you want to generate this version $(VERSION) (y/n)? " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	$(PYTHON) $(SETUP) $(BUILD)
 
 .PHONY: install
 install: version gen
 	### install python package ###
-	@read -p "Do you want to install this version $(VERSION) ? (y/n): " answer; \
+	@read -p "Do you want to install this version $(VERSION) (y/n)? " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	$(PIP) install --user .
 
 .PHONY: upload
 upload: version gen
 	### upload python package to PyPI depot ###
-	@read -p "Do you want to upload this version $(VERSION) on register $(REGISTER) ? (y/n): " answer; \
+	@read -p "Do you want to upload this version $(VERSION) on register $(REGISTER) (y/n)? " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	echo "Uploading this files :"; \
 	ls -1 "$(UPLOAD_DIR)/" | sed 's/^/  /'; \
-	read -p "Proceed (y/n)?: " answer; \
+	read -p "Proceed (y/n)? " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	read -s -p "password: " passwd; \
 	echo -e "\n-- Upload on PyPI - the Python Package Index..."; \
@@ -98,14 +98,14 @@ upload: version gen
 .PHONY: download
 download: version
 	### download python package from PyPI depot ###
-	@read -p "Do you want to download then install this version $(VERSION) ? (y/n): " answer; \
+	@read -p "Do you want to download then install this version $(VERSION) (y/n)? " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	$(PIP) install --user "$(PACKNAME)"=="$(VERSION)"
 
 .PHONY: uninstall
 uninstall: version
 	### uninstall python package ###
-	@read -p "Do you want to uninstall this version $(VERSION) ? (y/n): " answer; \
+	@read -p "Do you want to uninstall this version $(VERSION) (y/n)? " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi
 	### uninstall pip package ###
 	@$(PIP) uninstall "$(PACKNAME)"
@@ -113,7 +113,7 @@ uninstall: version
 .PHONY: clean
 clean:
 	### clean python package ###
-	@read -p "Do you want to clean the project ? (y/n): " answer; \
+	@read -p "Do you want to clean the project (y/n)? " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	rm -rfv ./build/; \
 	rm -rfv ./dist/; \
