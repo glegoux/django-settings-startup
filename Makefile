@@ -31,6 +31,7 @@ pyversion:
 version: pyversion
 	@$(PIP) --version
 	@echo -n "Django "; $(PYTHON) $(MANAGE) --version
+	@echo -n "PEP8 "; $(PEP8) --version
 	@echo $(PACKNAME) $(VERSION)
 
 .PHONY: switch
