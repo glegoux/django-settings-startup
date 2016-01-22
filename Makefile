@@ -75,7 +75,8 @@ register:
 .PHONY: style
 style: version
 	### coding style ###
-	@$(PEP8) $(FILES)
+	@$(PEP8) $(FILES); \
+	echo "OK..."
 
 .PHONY: check
 check: version
@@ -142,4 +143,5 @@ clean:
 	rm -rfv ./$(UPLOAD_DIR)/; \
 	rm -rfv *.egg-info; \
 	rm -rfv $(shell find . -name '*.pyc'); \
-	rm -rfv $(shell find . -name '__pycache__')
+	rm -rfv $(shell find . -name '__pycache__'); \
+	echo "OK..."

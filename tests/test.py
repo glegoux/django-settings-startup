@@ -8,13 +8,11 @@ from django.core.management import call_command
 from django.test import TestCase
 from django.core.wsgi import get_wsgi_application
 
-
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tests.config")
 application = get_wsgi_application()
 
 
 class TestCommand(TestCase):
-
     def test_with_config(self):
         """ Test if settings are written on standard output """
         r, w = os.pipe()
@@ -40,9 +38,11 @@ class TestCommand(TestCase):
                     s = line.split(' = ')
                     if len(s) == 2 and s[0] == 'APPLICATION_STAGE':
                         found = True
-                        self.assertEqual(s[1], '\'test\'', 'APPLICATION_STAGE bad value')
+                        self.assertEqual(s[1], '\'test\'',
+                                         'APPLICATION_STAGE bad value')
                         break
-                self.assertEqual(found, True, 'APPLICATION_STAGE does not exist')
+                self.assertEqual(found, True,
+                                 'APPLICATION_STAGE does not exist')
 
     def test_without_config(self):
         """ Test if settings are not written on standard output """
@@ -67,5 +67,5 @@ class TestCommand(TestCase):
                     line = line.rstrip()
                     s = line.split(' = ')
                     if len(s) == 1 and s[0] == 'Settings django...':
-                        self.fail("Settings django should not be present on standard output")
-
+                        self.fail(
+                            "Settings django should not be present on stdout")
