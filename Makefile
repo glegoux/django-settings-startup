@@ -16,7 +16,7 @@ PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
 .PHONY: usage
 usage:
 	@echo "targets include: usage all version pyversion switch view hidden"
-	@echo "                 test gen install upload download uninstall clean"
+	@echo "                 check test gen install upload download uninstall clean"
 
 .PHONY: all
 all: switch install upload uninstall download clean
@@ -60,9 +60,14 @@ hidden:
 	### hidden data ###
 	@ls -ad --color .* | sed 1,2d
 
+.PHONY: check
+check: version
+	### check setup.py ###
+	@$(PYTHON) $(SETUP) check --restructuredtext
+
 .PHONY: test
 test: version
-	### tests ###
+	### unit tests ###
 	@$(PYTHON) $(SETUP) test
 
 .PHONY: gen
