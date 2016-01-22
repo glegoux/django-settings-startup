@@ -6,16 +6,18 @@ BIN_DIR = /usr/bin
 MANAGE = tests/manage.py
 SETUP = setup.py
 BUILD = sdist bdist_wheel
+REGISTER = pypitest
+UPLOAD_DIR = dist
+PYPI_CONFIG_FILE = .pypirc
 VERSION = $(shell $(PYTHON) $(SETUP) --version)
 PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
-PYPI_CONFIG_FILE = .pypirc
 
 .PHONY: usage
 usage:
-	@echo "targets include: usage all version pyversion switch view hidden test gen install deploy download uninstall clean"
+	@echo "targets include: usage all version pyversion switch view hidden test gen install upload download uninstall clean"
 
 .PHONY: all
-all: switch install deploy uninstall download clean
+all: switch install upload uninstall download clean
 
 .PHONY: pyversion
 pyversion:
@@ -75,15 +77,20 @@ install: version gen
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	$(PIP) install --user .
 
-.PHONY: deploy
-deploy: version gen
-	### deploy python package to PyPI depot ###
-	@read -p "Do you want to deploy this version $(VERSION) ? (y/n): " answer; \
+.PHONY: upload
+upload: version gen
+	### upload python package to PyPI depot ###
+	@read -p "Do you want to upload this version $(VERSION) on register $(REGISTER) ? (y/n): " answer; \
+	if [ "$${answer}" != "y" ]; then exit; fi; \
+	echo "Uploading this files :"; \
+	ls -1 "$(UPLOAD_DIR)/" | sed 's/^/  /'; \
+	read -p "Proceed (y/n)?: " answer; \
 	if [ "$${answer}" != "y" ]; then exit; fi; \
 	read -s -p "password: " passwd; \
 	echo -e "\n-- Upload on PyPI - the Python Package Index..."; \
-	twine upload "dist/$(PACKNAME)-$(VERSION).tar.gz" \
+	twine upload "$(UPLOAD_DIR)/*" \
 		--config-file "$(PYPI_CONFIG_FILE)" \
+		-r "$(REGISTER)" \
 		--password "$${passwd}"; \
 	echo "...OK"
 
