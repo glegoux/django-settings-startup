@@ -5,7 +5,7 @@ onlypyfile = $(shell find $(1) -name '*.py' -type f | grep -v __init__.py)
 PYTHON = python
 PIP = pip
 PEP8 = pep8
-PYLINT = pylint
+PYLINT = pylint --disable=C0111,C0103,E0602
 BIN_DIR = /usr/bin
 FILES = setup.py $(call onlypyfile,"tests/" "django_settings_startup/")
 MANAGE = tests/manage.py
