@@ -44,9 +44,11 @@ switch: pyversion
 	if $(PYTHON) --version 2>&1 | grep -q "Python 2"; then \
 		sudo ln -sfv "$(BIN_DIR)/python3" "$(BIN_DIR)/python"; \
 		sudo ln -sfv "$(BIN_DIR)/pip3" "$(BIN_DIR)/pip"; \
+		sudo ln -sfv "$(BIN_DIR)/python3-config" "$(BIN_DIR)/python-config"; \
 	elif $(PYTHON) --version 2>&1 | grep -q "Python 3"; then \
 		sudo ln -sfv "$(BIN_DIR)/python2" "$(BIN_DIR)/python"; \
 		sudo ln -sfv "$(BIN_DIR)/pip2" "$(BIN_DIR)/pip"; \
+		sudo ln -sfv "$(BIN_DIR)/python2-config" "$(BIN_DIR)/python-config"; \
 	fi; \
 	echo -n 'to '; \
 	$(PYTHON) --version  2>&1
