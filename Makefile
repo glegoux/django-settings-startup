@@ -82,8 +82,7 @@ register:
 .PHONY: style
 style: version
 	### coding style ###
-	@$(PEP8) $(FILES); \
-	echo "OK..."
+	@$(PEP8) $(FILES) || exit 0 && echo "OK..."
 
 .PHONY: check
 check: version
