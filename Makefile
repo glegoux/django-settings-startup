@@ -5,8 +5,9 @@ onlypyfile = $(shell find $(1) -name '*.py' -type f | grep -v __init__.py)
 PYTHON = python
 PIP = pip
 PEP8 = pep8
+PYLINT = pylint
 BIN_DIR = /usr/bin
-FILES = $(call onlypyfile,"tests/" "django_settings_startup/") setup.py
+FILES = setup.py $(call onlypyfile,"tests/" "django_settings_startup/")
 MANAGE = tests/manage.py
 SETUP = setup.py
 BUILD = sdist bdist_wheel
@@ -20,7 +21,7 @@ PACKNAME = $(shell $(PYTHON) $(SETUP) --name)
 .PHONY: usage
 usage:
 	@echo "targets include: usage all version pyversion switch view hidden register"
-	@echo "                 style check test gen install upload download uninstall clean"
+	@echo "                 style check pylint test gen install upload download uninstall clean"
 
 .PHONY: all
 all: switch install upload uninstall download clean
@@ -34,6 +35,7 @@ version: pyversion
 	@$(PIP) --version
 	@echo -n "Django "; $(PYTHON) $(MANAGE) --version
 	@echo -n "PEP8 "; $(PEP8) --version
+	@pylint --version 2> /dev/null | sed 3d
 	@echo $(PACKNAME) $(VERSION)
 
 .PHONY: switch
@@ -88,8 +90,13 @@ check: version
 	### check setup.py ###
 	@$(PYTHON) $(SETUP) check --restructuredtext
 
+.PHONY: pylint
+pylint: version
+	### pylint ###
+	@$(PYLINT) $(FILES) || exit 0
+
 .PHONY: test
-test: version check style
+test: version check style pylint
 	### unit tests ###
 	@$(PYTHON) $(SETUP) test
 
