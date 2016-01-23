@@ -1,10 +1,12 @@
 SHELL = /usr/bin/env bash
 
+onlypyfile = $(shell find $(1) -name '*.py' -type f | grep -v __init__.py)
+
 PYTHON = python
 PIP = pip
 PEP8 = pep8
 BIN_DIR = /usr/bin
-FILES = tests/ django_settings_startup/ setup.py
+FILES = $(call onlypyfile,"tests/" "django_settings_startup/") setup.py
 MANAGE = tests/manage.py
 SETUP = setup.py
 BUILD = sdist bdist_wheel
