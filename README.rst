@@ -114,6 +114,12 @@ Coveralls : code coverage
 
 * https://coveralls.io/github/glegoux/django-settings-startup
 
+PyLint : source code bug
+------------------------
+
+* home page: http://www.pylint.org/
+* all codes: http://pylint-messages.wikidot.com/all-codes
+
 PEP8 : coding style
 -------------------
 
