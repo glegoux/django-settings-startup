@@ -8,7 +8,7 @@ python:
   - "3.3"
   - "3.4"
 before_install:
-  - [ $TRAVIS_OS_NAME = "osx" ] && brew install python --universal --framework
+  - brew install python --universal --framework
 install:
   - pip install .
   - pip install -r requirements.txt
