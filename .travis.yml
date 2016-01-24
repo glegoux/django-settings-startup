@@ -1,11 +1,14 @@
 language: python
 os:
   - linux
+  - osx
 python:
   - "2.7"
   - "3.2"
   - "3.3"
   - "3.4"
+before_install:
+  - if [[ $TRAVIS_OS_NAME = "osx" ]]; then brew install python --universal --framework; fi
 install:
   - pip install .
   - pip install -r requirements.txt
