@@ -86,7 +86,7 @@ See `VERSION <https://github.com/glegoux/django-settings-startup/blob/2.x/VERSIO
 Changelog
 ---------
 
-See `CHANGELOG <https://github.com/glegoux/django-settings-startup/blob/2.x/CHANGELOG>`_.
+See `CHANGELOG <https://github.com/glegoux/django-settings-startup/blob/2.x/CHANGELOG.md>`_.
 
 Read The Docs : Documentation
 -----------------------------
