@@ -1,7 +1,7 @@
 # PyCharm
 /.idea/
 
-# Python files ans setup
+# Python files and setup
 /build/
 /dist/
 /*.egg-info/
